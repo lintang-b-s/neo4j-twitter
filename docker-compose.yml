@@ -1,0 +1,42 @@
+version: "3.7"
+services:
+  neo4j:
+    container_name: neo4j
+    image: neo4j:5.19.0-community
+    ports:
+      - 7474:7474
+      - 7687:7687
+    deploy:
+      resources:
+        limits:
+          memory: 2000mb
+
+    environment:
+      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD}
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_PLUGINS=["apoc"] #, "graph-data-science"]
+      - NEO4J_server_memory_heap_initial__size=1G
+      - NEO4J_server_memory_heap_max__size=1G
+    volumes:
+      -  neo4j-data:/data
+      - neo4j-data:/logs
+      - neo4j-data:/var/lib/neo4j/import
+      - neo4j-data:/plugins
+
+
+  neo4j-service:
+    container_name: neo4j-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    mem_limit: 300mb
+    cpus: 0.5
+    ports:
+        - 9995:9995
+
+
+
+volumes:
+  neo4j-data:

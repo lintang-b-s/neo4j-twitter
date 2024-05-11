@@ -1,0 +1,4 @@
+github.com/brianvoe/gofakeit/v7 v7.0.3 h1:tGCt+eYfhTMWE1ko5G2EO1f/yE44yNpIwUb4h32O0wo=
+github.com/brianvoe/gofakeit/v7 v7.0.3/go.mod h1:QXuPeBw164PJCzCUZVmgpgHJ3Llj49jSLVkKPMtxtxA=
+github.com/neo4j/neo4j-go-driver/v5 v5.20.0 h1:XnoAi6g6XRkX+wxWa3yM+f7PT2VUkGQfBGtGuJL4fsM=
+github.com/neo4j/neo4j-go-driver/v5 v5.20.0/go.mod h1:Vff8OwT7QpLm7L2yYr85XNWe9Rbqlbeb9asNXJTHO4k=
